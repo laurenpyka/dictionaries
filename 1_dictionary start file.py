@@ -43,18 +43,9 @@ else:
 #print(phone)
 
 
-
-
-
-
 print()
 print('*****  end section 2 ********')
 print()
-
-
-
-
-
 
 
 print()
@@ -89,8 +80,6 @@ print()
 print('*****  end section 4 ********')
 print()
 
-'''
-
 
 
 
@@ -107,13 +96,16 @@ for value in phonebook.values():
     print(value)
 #dictionaries have a method called .values that allows you to iterate through all the values of the dictionary. 
 
+for key, vlaue in phonebook.items():
+    print(f'The key is {key} and the value is {value}')
 
+for item_tuple in phonebook.items():
+    print(item_tuple)
 
 print()
 print('*****  end section 5 ********')
 print()
 
-'''
 
 
 
@@ -121,10 +113,13 @@ print()
 print('*****  start section 6 - using get and clear ********')
 print()
 
+phone = phonebook.get('Chris', '555-5555')
+print(phone)
 
 
-
-
+phonebook.clear() #clears out all key values in dict, you're left with an empty dict
+print(phonebook)
+#since chris does exist in dict, we get his phone#, otherwise we'd get the default # (555-5555)
 
 print()
 print('*****  end section 6 ********')
@@ -136,9 +131,10 @@ print()
 print('*****  start section 7 - using pop method ********')
 print()
 
-
-
-
+print(phonebook)
+remove = phonebook.pop('Chris', 'not found')
+print(remove)
+print(phonebook)
 
 
 print()
@@ -146,13 +142,15 @@ print('*****  end section 7 ********')
 print()
 
 
-
 print()
 print('*****  start section 8 - using popitem ********')
 print()
+#randomly select key vaue pair
 
-
-
+print(phonebook)
+a = phonebook.popitem()
+print(a)
+print(phonebook)
 
 
 
@@ -160,24 +158,22 @@ print()
 print('*****  end section 8 ********')
 print()
 
-
+'''
 
 print()
 print('*****  start section 9 - using random and converting to list ********')
 print()
 
+list_of_keys = list(phonebook)
+print(list_of_keys)
 
+random_key = random.choice(list_of_keys)
+print(random_key)
 
+print(phonebook[random_key])
 
+print(phonebook[random.choice(list(phonebook))]) #same way to do what's above, just in one line of code. 
 
 print()
 print('*****  end section 9 ********')
 print()
-
-
-'''
-
-
-
-
-
