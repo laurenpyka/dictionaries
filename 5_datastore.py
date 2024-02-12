@@ -17,6 +17,8 @@ room-number,use,sq-ft,price
 
 
 
+#has one key, medical, medical's value is a list of dictionaries
+# 5 elements in the dictionary
 
 datastore = { "medical":[
       { "room-number": 100,
@@ -47,3 +49,11 @@ datastore = { "medical":[
 
       ]
 }
+
+outfile = open('retail_space.csv', 'w')
+outfile.write('room-number, use, sq-ft, price\n')
+
+
+for d in datastore['medical']: #d is each dictionary in the list
+    outfile.write(f"{d['room-number']}, {d['use']}, {d['sq-ft']},{d['price']}\n")
+    
