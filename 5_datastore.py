@@ -56,4 +56,5 @@ outfile.write('room-number, use, sq-ft, price\n')
 
 for d in datastore['medical']: #d is each dictionary in the list
     outfile.write(f"{d['room-number']}, {d['use']}, {d['sq-ft']},{d['price']}\n")
-    
+
+outfile.close()    
