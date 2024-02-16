@@ -164,17 +164,14 @@ Display report for all universities that have a total price for in-state student
 
 """
 
-
 import json
 infile = open('school_data.json', 'r')
 school_data = json.load(infile) #brings all the data from the json file and converts it into python code
-
 
 conference_schools = [372, 108, 107, 130]
 
 # Iterate through each school in the data
 for school in school_data:
-    # Check if the school's conference number matches any of the desired conference numbers
     if 'NCAA' in school and 'NAIA conference number football (IC2020)' in school['NCAA'] \
         and school['NCAA']['NAIA conference number football (IC2020)'] in conference_schools:
             if 'Graduation rate  women (DRVGR2020)' in school \
@@ -184,7 +181,6 @@ for school in school_data:
                 print("Graduation Rate for Women:", school['Graduation rate  women (DRVGR2020)'],"%")
                 print()
 for school in school_data:
-    # Check if the school's conference number matches any of the desired conference numbers
     if 'NCAA' in school and 'NAIA conference number football (IC2020)' in school['NCAA'] \
         and school['NCAA']['NAIA conference number football (IC2020)'] in conference_schools:
             if 'Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)' in school \
